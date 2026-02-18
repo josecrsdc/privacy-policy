@@ -68,85 +68,211 @@
             font-size: 13px;
             margin-top: 32px;
         }
+
+        /* Language toggle (added, keeps original styles intact) */
+        .lang-toggle {
+            text-align: center;
+            margin: -16px 0 32px;
+        }
+        .lang-toggle button {
+            border: 1px solid rgba(0,0,0,0.12);
+            background: #fff;
+            color: #1d1d1f;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 0 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .lang-toggle button.active {
+            background: #1d1d1f;
+            color: #fff;
+            border-color: #1d1d1f;
+        }
+        .lang { display: none; }
+        .lang.active { display: block; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Mantify</h1>
-            <p>Política de Privacidad</p>
+
+        <!-- Language toggle (added) -->
+        <div class="lang-toggle" aria-label="Selector de idioma / Language selector">
+            <button id="btn-es" class="active" type="button" onclick="setLanguage('es')">🇪🇸 Español</button>
+            <button id="btn-en" type="button" onclick="setLanguage('en')">🇬🇧 English</button>
         </div>
 
-        <div class="card">
-            <h2>Resumen</h2>
-            <p>Mantify es una aplicación de gestión de mantenimiento industrial que funciona completamente de forma local en tu dispositivo. No recopilamos, transmitimos ni almacenamos ningún dato personal en servidores externos.</p>
-            <div class="highlight">
-                <p>Tu información nunca sale de tu dispositivo.</p>
+        <!-- ===================== ESPAÑOL (ORIGINAL) ===================== -->
+        <div class="lang es active">
+            <div class="header">
+                <h1>Mantify</h1>
+                <p>Política de Privacidad</p>
+            </div>
+
+            <div class="card">
+                <h2>Resumen</h2>
+                <p>Mantify es una aplicación de gestión de mantenimiento industrial que funciona completamente de forma local en tu dispositivo. No recopilamos, transmitimos ni almacenamos ningún dato personal en servidores externos.</p>
+                <div class="highlight">
+                    <p>Tu información nunca sale de tu dispositivo.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Datos que almacena la app</h2>
+                <p>Toda la información se guarda localmente en tu dispositivo mediante SwiftData:</p>
+                <ul>
+                    <li>Información de máquinas (nombre, número de serie, ubicación, estado)</li>
+                    <li>Registros de mantenimiento (fechas, tipo, prioridad, costos)</li>
+                    <li>Inventario de stock (componentes, cantidades, proveedores)</li>
+                    <li>Fotos capturadas para documentación</li>
+                    <li>Preferencias de la app (nombre de usuario, apariencia)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Recopilación de datos</h2>
+                <p>Mantify <strong>no recopila</strong> ningún tipo de dato personal ni de uso. Específicamente:</p>
+                <ul>
+                    <li>No se envían datos a servidores externos</li>
+                    <li>No se utilizan servicios de analítica</li>
+                    <li>No se integran SDKs de terceros</li>
+                    <li>No se recopilan datos de ubicación</li>
+                    <li>No se usan identificadores de publicidad</li>
+                    <li>No se requiere creación de cuenta</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Permisos del dispositivo</h2>
+                <p>La app puede solicitar acceso a la cámara y galería de fotos únicamente para que puedas adjuntar imágenes a tus registros. Estas fotos se almacenan localmente y no se comparten con ningún servicio externo.</p>
+            </div>
+
+            <div class="card">
+                <h2>Seguridad</h2>
+                <p>Los datos se almacenan en el sandbox de la aplicación protegido por iOS. La seguridad de tu información depende de las medidas de protección de tu dispositivo (código de acceso, Face ID, Touch ID).</p>
+            </div>
+
+            <div class="card">
+                <h2>Eliminación de datos</h2>
+                <p>Puedes eliminar todos tus datos en cualquier momento desinstalando la aplicación de tu dispositivo. Al hacerlo, toda la información almacenada se elimina permanentemente.</p>
+            </div>
+
+            <div class="card">
+                <h2>Cambios a esta política</h2>
+                <p>Si realizamos cambios a esta política de privacidad, actualizaremos esta página con la nueva información.</p>
+            </div>
+
+            <div class="card">
+                <h2>Soporte</h2>
+                <p>Si tienes alguna duda, problema o necesitas ayuda con Mantify, puedes contactarnos en:</p>
+                <p style="margin-top: 8px;">
+                    <strong>Email:</strong> 
+                    <a href="mailto:jcrsdc@live.com" 
+                        aria-label="Enviar email a jcrsdc@live.com"
+                        style="text-decoration: underline;">
+                        jcrsdc@live.com
+                    </a>
+                </p>
+                <p style="margin-top: 8px;">También puedes encontrar ayuda en esta misma página, que describe cómo la app maneja tus datos y cómo funciona.</p>
+            </div>
+
+            <div class="footer">
+                <p>Última actualización: 18 de febrero de 2026</p>
             </div>
         </div>
 
-        <div class="card">
-            <h2>Datos que almacena la app</h2>
-            <p>Toda la información se guarda localmente en tu dispositivo mediante SwiftData:</p>
-            <ul>
-                <li>Información de máquinas (nombre, número de serie, ubicación, estado)</li>
-                <li>Registros de mantenimiento (fechas, tipo, prioridad, costos)</li>
-                <li>Inventario de stock (componentes, cantidades, proveedores)</li>
-                <li>Fotos capturadas para documentación</li>
-                <li>Preferencias de la app (nombre de usuario, apariencia)</li>
-            </ul>
+        <!-- ===================== ENGLISH (TRANSLATION) ===================== -->
+        <div class="lang en">
+            <div class="header">
+                <h1>Mantify</h1>
+                <p>Privacy Policy</p>
+            </div>
+
+            <div class="card">
+                <h2>Summary</h2>
+                <p>Mantify is an industrial maintenance management application that works entirely locally on your device. We do not collect, transmit, or store any personal data on external servers.</p>
+                <div class="highlight">
+                    <p>Your information never leaves your device.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Data stored by the app</h2>
+                <p>All information is stored locally on your device using SwiftData:</p>
+                <ul>
+                    <li>Machine information (name, serial number, location, status)</li>
+                    <li>Maintenance records (dates, type, priority, costs)</li>
+                    <li>Stock inventory (components, quantities, suppliers)</li>
+                    <li>Photos captured for documentation</li>
+                    <li>App preferences (username, appearance)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Data collection</h2>
+                <p>Mantify <strong>does not collect</strong> any personal or usage data. Specifically:</p>
+                <ul>
+                    <li>No data is sent to external servers</li>
+                    <li>No analytics services are used</li>
+                    <li>No third-party SDKs are integrated</li>
+                    <li>No location data is collected</li>
+                    <li>No advertising identifiers are used</li>
+                    <li>No account creation is required</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Device permissions</h2>
+                <p>The app may request access to the camera and photo library only so you can attach images to your records. These photos are stored locally and are not shared with any external service.</p>
+            </div>
+
+            <div class="card">
+                <h2>Security</h2>
+                <p>Data is stored in the iOS-protected application sandbox. The security of your information depends on your device protection measures (passcode, Face ID, Touch ID).</p>
+            </div>
+
+            <div class="card">
+                <h2>Data deletion</h2>
+                <p>You can delete all your data at any time by uninstalling the application from your device. Doing so permanently removes all stored information.</p>
+            </div>
+
+            <div class="card">
+                <h2>Changes to this policy</h2>
+                <p>If we make changes to this privacy policy, we will update this page with the new information.</p>
+            </div>
+
+            <div class="card">
+                <h2>Support</h2>
+                <p>If you have any questions, issues, or need help with Mantify, you can contact us at:</p>
+                <p style="margin-top: 8px;">
+                    <strong>Email:</strong> 
+                    <a href="mailto:jcrsdc@live.com" 
+                        aria-label="Send email to jcrsdc@live.com"
+                        style="text-decoration: underline;">
+                        jcrsdc@live.com
+                    </a>
+                </p>
+                <p style="margin-top: 8px;">You can also find help on this same page, which describes how the app handles your data and how it works.</p>
+            </div>
+
+            <div class="footer">
+                <p>Last updated: February 18, 2026</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Recopilación de datos</h2>
-            <p>Mantify <strong>no recopila</strong> ningún tipo de dato personal ni de uso. Específicamente:</p>
-            <ul>
-                <li>No se envían datos a servidores externos</li>
-                <li>No se utilizan servicios de analítica</li>
-                <li>No se integran SDKs de terceros</li>
-                <li>No se recopilan datos de ubicación</li>
-                <li>No se usan identificadores de publicidad</li>
-                <li>No se requiere creación de cuenta</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Permisos del dispositivo</h2>
-            <p>La app puede solicitar acceso a la cámara y galería de fotos únicamente para que puedas adjuntar imágenes a tus registros. Estas fotos se almacenan localmente y no se comparten con ningún servicio externo.</p>
-        </div>
-
-        <div class="card">
-            <h2>Seguridad</h2>
-            <p>Los datos se almacenan en el sandbox de la aplicación protegido por iOS. La seguridad de tu información depende de las medidas de protección de tu dispositivo (código de acceso, Face ID, Touch ID).</p>
-        </div>
-
-        <div class="card">
-            <h2>Eliminación de datos</h2>
-            <p>Puedes eliminar todos tus datos en cualquier momento desinstalando la aplicación de tu dispositivo. Al hacerlo, toda la información almacenada se elimina permanentemente.</p>
-        </div>
-
-        <div class="card">
-            <h2>Cambios a esta política</h2>
-            <p>Si realizamos cambios a esta política de privacidad, actualizaremos esta página con la nueva información.</p>
-        </div>
-
-        <div class="card">
-            <h2>Soporte</h2>
-            <p>Si tienes alguna duda, problema o necesitas ayuda con Mantify, puedes contactarnos en:</p>
-            <p style="margin-top: 8px;">
-                <strong>Email:</strong> 
-                <a href="mailto:jcrsdc@live.com" 
-                    aria-label="Enviar email a jcrsdc@live.com"
-                    style="text-decoration: underline;">
-                    jcrsdc@live.com
-                </a>
-            </p>
-            <p style="margin-top: 8px;">También puedes encontrar ayuda en esta misma página, que describe cómo la app maneja tus datos y cómo funciona.</p>
-        </div>
-
-        <div class="footer">
-            <p>Última actualización: 11 de febrero de 2026</p>
-        </div>
     </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+            document.querySelector('.lang.' + lang).classList.add('active');
+
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
